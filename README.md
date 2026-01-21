@@ -17,6 +17,7 @@ This repository contains a small, static web interface for composing query strin
 - Runs entirely in the browser without a backend.
 
 ## Usage
+- Use the hosted builder at https://ke5de.github.io/etv-querybuilder/.
 - Open `index.html` in a modern browser.
 - If the browser blocks local file access, serve the directory with a local web server and open the page via `http://`.
 
