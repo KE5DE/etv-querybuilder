@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ErsatzTV Query Builder (Web)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="title-row">
+          <h1>ErsatzTV Query Builder (Web)</h1>
+          <span id="app-version" class="version"></span>
+        </div>
+        <p>
+          Build Lucene-like queries with the same logic as the existing
+          Tkinter tool, directly in the browser.
+        </p>
+      </header>
+
+      <section>
+        <h2>1) Inputs</h2>
+        <div id="status" class="status" hidden></div>
+        <form>
+          <div>
+            <label for="media-type">Media type</label>
+            <select id="media-type"></select>
+          </div>
+          <div>
+            <label for="field">Field</label>
+            <select id="field"></select>
+          </div>
+          <div>
+            <label for="operator">Operator</label>
+            <select id="operator"></select>
+            <div id="hint" class="hint" hidden></div>
+          </div>
+          <div>
+            <label for="logic">Logical operator</label>
+            <select id="logic">
+              <option value="AND">AND</option>
+              <option value="OR">OR</option>
+              <option value="NOT">NOT</option>
+            </select>
+          </div>
+          <div>
+            <label for="value">Value</label>
+            <input id="value" type="text" placeholder="e.g. Science Fiction" />
+            <select id="value-type" hidden></select>
+          </div>
+          <div id="range" hidden>
+            <label>Range</label>
+            <div class="grid-row">
+              <input id="range-min" type="text" placeholder="From" />
+              <input id="range-max" type="text" placeholder="To" />
+            </div>
+          </div>
+          <div id="special" hidden>
+            <label>Special field</label>
+            <div class="grid-row">
+              <input id="special-number" type="number" min="1" placeholder="Number" />
+              <select id="special-unit"></select>
+            </div>
+          </div>
+        </form>
+        <div class="actions" style="margin-top: 16px;">
+          <button type="button" id="add-condition">Add condition</button>
+          <button type="button" id="generate" class="secondary">Generate query</button>
+          <button type="button" id="reset" class="secondary">Reset</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>2) Conditions</h2>
+        <ul id="conditions" class="list"></ul>
+      </section>
+
+      <section>
+        <h2>3) Result</h2>
+        <label for="query">Generated query</label>
+        <textarea id="query" readonly></textarea>
+        <div class="actions" style="margin-top: 12px;">
+          <button type="button" id="copy">Copy to clipboard</button>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Note: This web app contains AI-generated code. Please review before production use.
+        </p>
+      </footer>
+    </main>
+
+    <script src="version.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
