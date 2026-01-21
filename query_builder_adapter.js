@@ -19,7 +19,7 @@ export function buildCondition({
       return { error: "Please enter a number for the special field." };
     }
     const unit = specialUnit || UNITS[0];
-    return { clause: `${fieldName}:${formatValue(`${specialNumber} ${unit}`)}` };
+    return { clause: `${fieldName}:${formatSpecialValue(specialNumber, unit)}` };
   }
 
   if (!field) {
@@ -127,4 +127,17 @@ function formatValue(value) {
 
 function applyWildcards(value, prefix, suffix) {
   return `${prefix}${formatValue(value)}${suffix}`;
+}
+
+function formatSpecialValue(numberValue, unit) {
+  const normalizedUnit = normalizeUnit(numberValue, unit);
+  return formatValue(`${numberValue} ${normalizedUnit}`);
+}
+
+function normalizeUnit(numberValue, unit) {
+  const numericValue = Number(numberValue);
+  if (Number.isFinite(numericValue) && numericValue === 1) {
+    return unit.replace(/s$/, "");
+  }
+  return unit;
 }
