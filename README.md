@@ -1,7 +1,7 @@
 # ErsatzTV Query Builder (Web, English)
 
 ## Overview
-This is a standalone, English-language copy of the ErsatzTV Query Builder web app. It helps build Lucene-like query strings using the same logic as the existing Query Builder, but runs entirely in the browser.
+This is a standalone, English-language ErsatzTV Query Builder web app. It helps build Lucene-like query strings for ErsatzTV search.
 
 ## Requirements
 - A modern web browser.
