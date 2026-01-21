@@ -1,19 +1,28 @@
-# ErsatzTV Query Builder (Web, English)
+# ErsatzTV Query Builder (Proof of Concept)
+
+> **Important Notice**
+> - The entire codebase is generated exclusively by AI.
+> - This project is a proof of concept only.
+> - This project has no affiliation with ErsatzTV, official or unofficial.
 
 ## Overview
-This is a standalone, English-language ErsatzTV Query Builder web app. It helps build Lucene-like query strings for ErsatzTV search.
+This repository contains a small, static web interface for composing query strings. It provides a lightweight UI to help assemble search expressions through selectable fields and operators.
 
-## Requirements
-- A modern web browser.
-- (Optional) A simple local web server to avoid `file://` restrictions.
+## Screenshot
+![Query Builder preview](media/screenshot.png)
 
-## Run locally
-- Open `index.html` in your browser.
-- If options do not load, serve the folder with a local web server and open the page via `http://`.
+## Features
+- Static HTML/CSS/JavaScript implementation.
+- Selectable fields, operators, and values for building queries.
+- Runs entirely in the browser without a backend.
 
-## Folder structure
+## Usage
+- Open `index.html` in a modern browser.
+- If the browser blocks local file access, serve the directory with a local web server and open the page via `http://`.
+
+## File Structure
 ```
-webapps/ersatztv-query-builder-en/
+.
 ├── app.js
 ├── index.html
 ├── query_builder_adapter.js
@@ -21,9 +30,6 @@ webapps/ersatztv-query-builder-en/
 ├── styles.css
 └── version.js
 ```
-
-## Notes
-- The query-building logic is based on the existing Query Builder implementation, but the original files in this repository remain unchanged.
 
 ## Troubleshooting
 - **Dropdowns are empty:** Some browsers block local file access. Use a local web server and open the page via `http://`.
